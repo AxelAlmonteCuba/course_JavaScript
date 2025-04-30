@@ -19,17 +19,32 @@ nombres.forEach((nombre) => {
 imprimir()
 
 function mostrarDatos(nombre, edad) {
-     datos= `
+    datos= `
     <h1> Hola ${nombre} </h1>
     <h2>tienes ${edad} años</h2>`;
+
+    if(esMayorDeEdad(edad)) {
+        datos += '<h2> Eres mayor de edad </h2>'
+    }
+    else {
+        datos += '<h2> Eres menor de edad </h2>'
+    }
+     
     return datos;
 }
 
 function imprimir() {
     var datos = document.getElementById('datos');
-    datos.innerHTML = mostrarDatos("Axel Almonte", 22);
+    datos.innerHTML = mostrarDatos("Axel Almonte", 16);
 }
 
+function esMayorDeEdad(edad) {
+    if (edad >= 18) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 //document.write('Hola ' + nombre + ' tienes ' + edad + ' años' + '<br>')
 
