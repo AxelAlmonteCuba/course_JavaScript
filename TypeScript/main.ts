@@ -14,9 +14,9 @@ let personas:string[] = ["Axel", "Almonte", "Jose"];
 let div_personas:HTMLElement | null = document.querySelector("#personas");
 div_personas.innerHTML = "<ul>";
 
-personas.map((persona)=>{
-    div_personas.innerHTML += '<li>' + persona + '</li>';
+console.log(personas.map((persona)=>{
+    return `<li> ${persona} </li>`;
 }
-)
+).join(""));
 
 div_personas.innerHTML += "</ul>";

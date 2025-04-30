@@ -9,7 +9,7 @@ console.log("Hola, soy " + nombre + " " + apellido + " y tengo " + edad + " año
 var personas = ["Axel", "Almonte", "Jose"];
 var div_personas = document.querySelector("#personas");
 div_personas.innerHTML = "<ul>";
-personas.map(function (persona) {
-    div_personas.innerHTML += '<li>' + persona + '</li>';
-});
+console.log(personas.map(function (persona) {
+    return "<li> ".concat(persona, " </li>");
+}).join(""));
 div_personas.innerHTML += "</ul>";
