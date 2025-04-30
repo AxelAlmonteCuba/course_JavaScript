@@ -19,3 +19,7 @@ if(edad >= 18) {
 else {
     datos.innerHTML += '<h2> Eres menor de edad </h2>'
 }
+
+for (var i = 0; i < 10; i++) {
+    datos.innerHTML += '<h2> Iteracion ' + i + '</h2>'
+}
