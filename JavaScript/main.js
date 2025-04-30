@@ -1,8 +1,8 @@
 
 //alert('hola mundo')
 
-var nombre = ('Axel Almonte')
-var edad = 17
+var nombre = ('Axel Almonte');
+var edad = 17;
 
 //document.write('Hola ' + nombre + ' tienes ' + edad + ' años' + '<br>')
 
@@ -26,11 +26,18 @@ for (var i = 0; i < 10; i++) {
 }
 */
 
-mostrarDatos(nombre, edad)
+//mostrarDatos(nombre, edad)
+
+imprimir()
 
 function mostrarDatos(nombre, edad) {
-    var datos = document.getElementById('datos')
-    datos.innerHTML = `
+     datos= `
     <h1> Hola ${nombre} </h1>
-    <h2>tienes ${edad} años</h2>`
+    <h2>tienes ${edad} años</h2>`;
+    return datos;
+}
+
+function imprimir() {
+    var datos = document.getElementById('datos');
+    datos.innerHTML = mostrarDatos("Axel Almonte", 22);
 }
