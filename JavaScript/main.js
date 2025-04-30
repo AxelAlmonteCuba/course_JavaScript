@@ -7,9 +7,14 @@ var edad = 17;
 var nombres = ['Axel', 'Frank', 'Luis', 'Pablo', 'Javier', 'Jose', 'Juan', 'Pedro', 'Andres', 'Alberto']
 var edades = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-for (var i = 0; i < nombres.length; i++) {
-    document.write('Hola ' + nombres[i] + ' tienes ' + edades[i] + ' años' + '<br>')
+/*for (var i = 0; i < nombres.length; i++) {
+    document.write('Hola ' + nombres[i] + ' tienes ' + edades[i] + ' años' + '<br><br>')
 }
+*/
+
+nombres.forEach(function (nombre) {
+    document.write('Hola ' + nombre +'<br><br>')
+}   )
 
 imprimir()
 
