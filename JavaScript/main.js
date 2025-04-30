@@ -4,6 +4,28 @@
 var nombre = ('Axel Almonte');
 var edad = 17;
 
+var nombres = ['Axel', 'Frank', 'Luis', 'Pablo', 'Javier', 'Jose', 'Juan', 'Pedro', 'Andres', 'Alberto']
+var edades = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
+for (var i = 0; i < nombres.length; i++) {
+    document.write('Hola ' + nombres[i] + ' tienes ' + edades[i] + ' años' + '<br>')
+}
+
+imprimir()
+
+function mostrarDatos(nombre, edad) {
+     datos= `
+    <h1> Hola ${nombre} </h1>
+    <h2>tienes ${edad} años</h2>`;
+    return datos;
+}
+
+function imprimir() {
+    var datos = document.getElementById('datos');
+    datos.innerHTML = mostrarDatos("Axel Almonte", 22);
+}
+
+
 //document.write('Hola ' + nombre + ' tienes ' + edad + ' años' + '<br>')
 
 
@@ -27,17 +49,3 @@ for (var i = 0; i < 10; i++) {
 */
 
 //mostrarDatos(nombre, edad)
-
-imprimir()
-
-function mostrarDatos(nombre, edad) {
-     datos= `
-    <h1> Hola ${nombre} </h1>
-    <h2>tienes ${edad} años</h2>`;
-    return datos;
-}
-
-function imprimir() {
-    var datos = document.getElementById('datos');
-    datos.innerHTML = mostrarDatos("Axel Almonte", 22);
-}
