@@ -2,7 +2,7 @@
 //alert('hola mundo')
 
 var nombre = ('Axel Almonte')
-var edad = 22
+var edad = 17
 
 //document.write('Hola ' + nombre + ' tienes ' + edad + ' años' + '<br>')
 
@@ -11,5 +11,11 @@ var datos = document.getElementById('datos')
 
 datos.innerHTML = `
 <h1> Hola ${nombre} </h1>
-<h2>tienes ${edad} años</h2>
-` 
+<h2>tienes ${edad} años</h2>`
+
+if(edad >= 18) {
+    datos.innerHTML += '<h2> Eres mayor de edad </h2>'
+}
+else {
+    datos.innerHTML += '<h2> Eres menor de edad </h2>'
+}
