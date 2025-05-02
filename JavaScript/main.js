@@ -1,23 +1,25 @@
 
-//alert('hola mundo')
-
+//variables
 var nombre = ('Axel Almonte');
 var edad = 17;
 
 var nombres = ['Axel', 'Frank', 'Luis', 'Pablo', 'Javier', 'Jose', 'Juan', 'Pedro', 'Andres', 'Alberto']
 var edades = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-/*for (var i = 0; i < nombres.length; i++) {
-    document.write('Hola ' + nombres[i] + ' tienes ' + edades[i] + ' años' + '<br><br>')
-}
-*/
 
+//bucles
 nombres.forEach((nombre) => {
     document.write('Hola ' + nombre +'<br><br>')
 }   )
 
+//objetos
+var person = new Persona('Axel', 17);
+
+
 imprimir()
 
+
+//funciones
 function mostrarDatos(nombre, edad) {
     datos= `
     <h1> Hola ${nombre} </h1>
@@ -45,6 +47,52 @@ function esMayorDeEdad(edad) {
         return false;
     }
 }
+
+
+//clases
+class Persona {
+    nombre = "nombre por defecto";
+    #edad = 0;
+    
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    mostrarDatos() {
+        return `Hola ${this.nombre} tienes ${this.edad} años`;
+    }
+    aumentarEdad() {
+        this.edad++;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+En este aprtado se anotara codigos o conceptos que se usaran durante el aprendizaje conmo repaso en el futuro
+    
+*/
+
+
+
+//alert('hola mundo')
+
+
+
+/*for (var i = 0; i < nombres.length; i++) {
+    document.write('Hola ' + nombres[i] + ' tienes ' + edades[i] + ' años' + '<br><br>')
+}
+*/
 
 //document.write('Hola ' + nombre + ' tienes ' + edad + ' años' + '<br>')
 
