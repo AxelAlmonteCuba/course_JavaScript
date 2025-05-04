@@ -72,13 +72,23 @@ nombres.forEach((nombre, indice) => {
     personas.push(persona);
 })
  
+//filter
 const mayorDeEdad = personas.filter(personaFilter => personaFilter.getEdad() >= 18);
+//find
+const findPerson = personas.find(personaFind => personaFind.nombre === 'Axel');
+let dataFind = findPerson.mostrarDatos();
 
+
+data += "<h1> Mayores de edad </h1>";
 mayorDeEdad.forEach((personFor) => {
    data += personFor.mostrarDatos(); 
 });
-console.log(mayorDeEdad);
+
+data += "<h1> Persona encontrada </h1>";
+data += dataFind;
+
 imprimir(data);
+
 
 //funciones
 function mostrarDatos(nombre, edad) {
