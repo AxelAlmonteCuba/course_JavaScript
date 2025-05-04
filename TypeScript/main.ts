@@ -1,3 +1,4 @@
+
 //clases
 
 class persona{
@@ -49,6 +50,59 @@ var datos = ""
     datos = "<h3>Es menor de edad</h3>";
 }
 */
+
+//types
+type ram = number | string;
+type nombre = string;
+type notas = [number, number];
+
+type  articulo = {
+    nombre:string;
+    precio:number;
+    marca:string;
+}
+type cpu = {
+    modelo:string;
+    ram:ram;
+}
+
+type monitores = {
+    pulgadas:number;
+}
+
+type computador = articulo & cpu & monitores ;
+type computadorConMetodo = computador & {
+    mostrar_datos: () => string; // funciones flechas o anonimas equivalente a un funcion lambda
+}
+
+const compuHP :computadorConMetodo = {
+    nombre: "Laptop HP",   
+    precio: 1000,
+    marca: "HP",
+    modelo: "HP 123",
+    ram: 16,
+    pulgadas: 24,
+    mostrar_datos(){
+        return `<h1> Computador ${this.nombre} </h1>
+        <ul>
+        <li> Precio: ${this.precio} </li>
+        <li> Marca: ${this.marca} </li>
+        <li> Modelo: ${this.modelo} </li>
+        <li> Ram: ${this.ram} </li>
+        <li> Pulgadas: ${this.pulgadas} </li>
+        </ul>`;
+    }
+}
+
+const datos_Compu = compuHP.mostrar_datos();
+let div_computador:HTMLElement | null = document.querySelector("#computadora");
+
+if(div_computador === null){
+    throw new Error("No se ha encontrado el elemento con id 'computadora'");
+}
+else{
+    div_computador.innerHTML = datos_Compu;
+}
 const admin:Admininstrador = new Admininstrador("Axel", "Administrador", "Sistemas");
 const usuario:user = {
     nombre: "Axel Almonte",

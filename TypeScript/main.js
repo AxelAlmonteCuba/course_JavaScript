@@ -35,12 +35,25 @@ var Admininstrador = /** @class */ (function () {
 //instanciando la clase
 var persona1 = new persona("Axel", "Almonte", 21);
 var datos = "";
-/*if(persona1.getEdad >= 18){
-    datos = "<h3>Es mayor de edad</h3>";
-}else{
-    datos = "<h3>Es menor de edad</h3>";
+var compuHP = {
+    nombre: "Laptop HP",
+    precio: 1000,
+    marca: "HP",
+    modelo: "HP 123",
+    ram: 16,
+    pulgadas: 24,
+    mostrar_datos: function () {
+        return "<h1> Computador ".concat(this.nombre, " </h1>\n        <ul>\n        <li> Precio: ").concat(this.precio, " </li>\n        <li> Marca: ").concat(this.marca, " </li>\n        <li> Modelo: ").concat(this.modelo, " </li>\n        <li> Ram: ").concat(this.ram, " </li>\n        <li> Pulgadas: ").concat(this.pulgadas, " </li>\n        </ul>");
+    }
+};
+var datos_Compu = compuHP.mostrar_datos();
+var div_computador = document.querySelector("#computadora");
+if (div_computador === null) {
+    throw new Error("No se ha encontrado el elemento con id 'computadora'");
 }
-*/
+else {
+    div_computador.innerHTML = datos_Compu;
+}
 var admin = new Admininstrador("Axel", "Administrador", "Sistemas");
 var usuario = {
     nombre: "Axel Almonte",
