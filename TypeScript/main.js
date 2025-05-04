@@ -5,6 +5,20 @@ var persona = /** @class */ (function () {
         this.apellido = apellido;
         this.edad = edad;
     }
+    Object.defineProperty(persona.prototype, "getEdad", {
+        get: function () {
+            return this.edad;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(persona.prototype, "setNombre", {
+        set: function (nombre) {
+            this.nombre = nombre;
+        },
+        enumerable: false,
+        configurable: true
+    });
     persona.prototype.mostrar_datos = function () {
         return "<p>Hola, soy ".concat(this.nombre, " ").concat(this.apellido, " y tengo ").concat(this.edad, " a\u00F1os.</p>");
     };
@@ -12,6 +26,13 @@ var persona = /** @class */ (function () {
 }());
 //instanciando la clase
 var persona1 = new persona("Axel", "Almonte", 21);
+var datos = "";
+if (persona1.getEdad >= 18) {
+    datos = "<h3>Es mayor de edad</h3>";
+}
+else {
+    datos = "<h3>Es menor de edad</h3>";
+}
 //variables
 var nombre = "Axel";
 var apellido = "Almonte";
@@ -19,12 +40,13 @@ var edad = 22;
 //constantes
 var dni = 87654321;
 console.log("Hola, soy " + nombre + " " + apellido + " y tengo " + edad + " años.");
+datos += persona1.mostrar_datos();
 var div_personas = document.querySelector("#personas");
 if (div_personas === null) {
     throw new Error("No se ha encontrado el elemento con id 'personas'");
 }
 else {
-    div_personas.innerHTML = persona1.mostrar_datos();
+    div_personas.innerHTML = datos;
 }
 //arreglos
 /*let personas:string[] = ["Axel", "Almonte", "Jose"];

@@ -3,12 +3,18 @@
 class persona{
     nombre:string;
     apellido:string;
-    edad:number;
+    private edad:number;
 
     constructor(nombre:string, apellido:string, edad:number){
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
+    }
+    get getEdad():number{
+        return this.edad;
+    }
+    set setNombre(nombre:string){
+        this.nombre = nombre;
     }
 
     mostrar_datos():string{
@@ -19,7 +25,13 @@ class persona{
 
 //instanciando la clase
 const persona1:persona = new persona("Axel", "Almonte", 21);
+var datos = ""
 
+if(persona1.getEdad >= 18){
+    datos = "<h3>Es mayor de edad</h3>";
+}else{  
+    datos = "<h3>Es menor de edad</h3>";
+}
 
 //variables
 let nombre:string = "Axel";
@@ -31,11 +43,13 @@ const dni:number = 87654321;
 
 console.log("Hola, soy " + nombre + " " + apellido + " y tengo " + edad + " años.");
 
+datos += persona1.mostrar_datos();
+
 let div_personas:HTMLElement | null = document.querySelector("#personas");
 if(div_personas === null){
     throw new Error("No se ha encontrado el elemento con id 'personas'");
 }else{
-    div_personas.innerHTML = persona1.mostrar_datos();
+    div_personas.innerHTML = datos;
 }
 
 //arreglos
