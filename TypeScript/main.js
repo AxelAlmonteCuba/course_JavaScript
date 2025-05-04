@@ -24,15 +24,30 @@ var persona = /** @class */ (function () {
     };
     return persona;
 }());
+var Admininstrador = /** @class */ (function () {
+    function Admininstrador(nombre, rol, area) {
+        this.nombre = nombre;
+        this.rol = "Administrador";
+        this.area = area;
+    }
+    return Admininstrador;
+}());
 //instanciando la clase
 var persona1 = new persona("Axel", "Almonte", 21);
 var datos = "";
-if (persona1.getEdad >= 18) {
+/*if(persona1.getEdad >= 18){
     datos = "<h3>Es mayor de edad</h3>";
-}
-else {
+}else{
     datos = "<h3>Es menor de edad</h3>";
 }
+*/
+var admin = new Admininstrador("Axel", "Administrador", "Sistemas");
+var usuario = {
+    nombre: "Axel Almonte",
+    rol: "Usuario"
+};
+datos += "<p>Hola, soy ".concat(admin.nombre, ", soy ").concat(admin.rol, " del area ").concat(admin.area, "</p>");
+datos += "<p>Hola, soy ".concat(usuario.nombre, ", soy ").concat(usuario.rol, "</p>");
 //variables
 var nombre = "Axel";
 var apellido = "Almonte";

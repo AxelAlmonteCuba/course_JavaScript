@@ -22,16 +22,41 @@ class persona{
     }
 }
 
+//interfaces
+interface user{
+    nombre:string;
+    rol:string;
+}
+
+class Admininstrador implements user{
+    nombre: string;
+    rol: string;
+    area:string;
+    constructor(nombre:string, rol:string, area:string){
+        this.nombre = nombre;
+        this.rol = "Administrador";
+        this.area = area;
+    }
+}
 
 //instanciando la clase
 const persona1:persona = new persona("Axel", "Almonte", 21);
 var datos = ""
 
-if(persona1.getEdad >= 18){
+/*if(persona1.getEdad >= 18){
     datos = "<h3>Es mayor de edad</h3>";
 }else{  
     datos = "<h3>Es menor de edad</h3>";
 }
+*/
+const admin:Admininstrador = new Admininstrador("Axel", "Administrador", "Sistemas");
+const usuario:user = {
+    nombre: "Axel Almonte",
+    rol: "Usuario"
+}
+
+datos += `<p>Hola, soy ${admin.nombre}, soy ${admin.rol} del area ${admin.area}</p>`;
+datos += `<p>Hola, soy ${usuario.nombre}, soy ${usuario.rol}</p>`;
 
 //variables
 let nombre:string = "Axel";
