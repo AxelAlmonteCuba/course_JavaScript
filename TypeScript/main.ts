@@ -132,18 +132,18 @@ if(div_personas === null){
 }
 
 //arreglos
-/*let personas:string[] = ["Axel", "Almonte", "Jose"];
+let personas:string[] = ["Axel", "Almonte", "Jose"];
 let edades:number[] = [22, 11, 24];
 
 
 div_personas.innerHTML = "<ul>" + 
-        personas.map((persona)=>{
+        personas.map((persona)=>{ //funcion flecha con el metodo map
             return `<li> ${persona} </li>`;
         }).join("");
 
 div_personas.innerHTML += "</ul>";
 
-mostrar_datos(personas, edades, div_personas);*/
+//mostrar_datos(personas, edades, div_personas);
 
 
 

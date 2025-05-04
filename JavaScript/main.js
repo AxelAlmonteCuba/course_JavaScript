@@ -1,10 +1,8 @@
 
 //variables
-var nombre = ('Axel Almonte');
-var edad = 17;
+//var nombre = ('Axel Almonte');
+//var edad = 17;
 
-var nombres = ['Axel', 'Frank', 'Luis', 'Pablo', 'Javier', 'Jose', 'Juan', 'Pedro', 'Andres', 'Alberto']
-var edades = [22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
 
 //bucles
@@ -20,29 +18,30 @@ class Persona {
     
     constructor(nombre, edad) {
         this.nombre = nombre;
-        this.edad = edad;
+        this.#edad = edad;
     }
 
-    mostrarDatos() {
-        return `Hola ${this.nombre} tienes ${this.edad} años`;
-    }
-    aumentarEdad() {
-        this.edad++;
-    }
-
-    mostrarDatos() {
-        datos= `
-        <h1> Hola ${nombre} </h1>
-        <h2>tienes ${edad} años</h2>`;
     
-        if(esMayorDeEdad(edad)) {
-            datos += '<h2> Eres mayor de edad </h2>'
+    aumentarEdad() {
+        this.#edad++;
+    }
+
+    mostrarDatos() {
+        let datos = `
+        <h2> Hola ${this.nombre} </h2>
+        <h2>tienes ${this.#edad} años</h2>`;
+    
+        if(esMayorDeEdad(this.#edad)) {
+            datos += "<h2> Eres mayor de edad </h2>";
         }
         else {
-            datos += '<h2> Eres menor de edad </h2>'
+            datos += "<h2> Eres menor de edad </h2>";
         }
          
         return datos;
+    }
+    getEdad() {
+        return this.#edad;
     }
 
     esMayorDeEdad(edad) {
@@ -57,17 +56,29 @@ class Persona {
 
 
 //instancia de la clase
-const person = new Persona('Axel', 17);
+//const person = new Persona('Axel', 17);
 
-var datos = person.mostrarDatos();
-console.log(datos);
+//var datos = person.mostrarDatos();
 
-imprimir(datos);
+const nombres = ['Axel', 'Frank', 'Luis', 'Pablo', 'Javier', 'Jose', 'Juan', 'Pedro', 'Andres', 'Alberto']
+const edades = [12, 23, 24, 15, 26, 27, 28, 19, 3, 31];
 
+const personas = [];
 
+let data = "";
 
+nombres.forEach((nombre, indice) => {
+    var persona = new Persona(nombre, edades[indice]);
+    personas.push(persona);
+})
+ 
+const mayorDeEdad = personas.filter(personaFilter => personaFilter.getEdad() >= 18);
 
-
+mayorDeEdad.forEach((personFor) => {
+   data += personFor.mostrarDatos(); 
+});
+console.log(mayorDeEdad);
+imprimir(data);
 
 //funciones
 function mostrarDatos(nombre, edad) {

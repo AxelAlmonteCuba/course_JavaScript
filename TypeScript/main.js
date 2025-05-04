@@ -77,18 +77,14 @@ else {
     div_personas.innerHTML = datos;
 }
 //arreglos
-/*let personas:string[] = ["Axel", "Almonte", "Jose"];
-let edades:number[] = [22, 11, 24];
-
-
+var personas = ["Axel", "Almonte", "Jose"];
+var edades = [22, 11, 24];
 div_personas.innerHTML = "<ul>" +
-        personas.map((persona)=>{
-            return `<li> ${persona} </li>`;
-        }).join("");
-
+    personas.map(function (persona) {
+        return "<li> ".concat(persona, " </li>");
+    }).join("");
 div_personas.innerHTML += "</ul>";
-
-mostrar_datos(personas, edades, div_personas);*/
+//mostrar_datos(personas, edades, div_personas);
 //funciones
 function esMayorDeEdad(edad) {
     return edad >= 18;
