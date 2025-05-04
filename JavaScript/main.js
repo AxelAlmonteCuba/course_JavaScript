@@ -84,6 +84,8 @@ let datareplace = "<h1>Replace</h1>";
 let cadenas = "<h3>Hola soy Axel y tengo 17 años</h3>";
 datareplace += cadenas
 let nombreReplace = cadenas.replace('Axel', 'Frank');
+datareplace += nombreReplace;
+
 
 //repeat
 let cadenaRepit = "Hola";
@@ -94,7 +96,15 @@ let datarepit = "<h1>Repeat</h1>" + repit;
 let fill = new Array(10).fill('Hola ');
 let dataFill = "<h1>Fill</h1>" + fill.join(' '); //join
 
-datareplace += nombreReplace;
+//reduce
+let edadesReduce = edades.reduce((acumludado, edaActual) => acumludado + edaActual, 0);
+let dataReduce = `<h1>Reduce</h1> <h3> ${edadesReduce} </h3>`;
+
+//sort
+edades.sort((a, b) => a - b); //ascendente
+let dataSort = `<h1>Sort ascendente</h1> <h3> ${edades} </h3>`;
+edades.sort((a, b) => b - a); //descendente
+let dataSort2 = `<h1>Sort descendente</h1> <h3> ${edades} </h3>`;
 
 /*data += "<h1> Mayores de edad </h1>";
 mayorDeEdad.forEach((personFor) => {
@@ -106,6 +116,9 @@ data += "<h1> Persona encontrada </h1>";
 data += dataFind;
 data += repit;
 data += dataFill;
+data += dataReduce;
+data += dataSort;
+data += dataSort2;
 
 imprimir(data);
 
