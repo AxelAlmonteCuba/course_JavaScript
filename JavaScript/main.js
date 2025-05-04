@@ -78,14 +78,34 @@ const mayorDeEdad = personas.filter(personaFilter => personaFilter.getEdad() >= 
 const findPerson = personas.find(personaFind => personaFind.nombre === 'Axel');
 let dataFind = findPerson.mostrarDatos();
 
+//String
+//replace
+let datareplace = "<h1>Replace</h1>";
+let cadenas = "<h3>Hola soy Axel y tengo 17 años</h3>";
+datareplace += cadenas
+let nombreReplace = cadenas.replace('Axel', 'Frank');
 
-data += "<h1> Mayores de edad </h1>";
+//repeat
+let cadenaRepit = "Hola";
+let repit = cadenaRepit.repeat(5);
+let datarepit = "<h1>Repeat</h1>" + repit;
+
+//fill
+let fill = new Array(10).fill('Hola ');
+let dataFill = "<h1>Fill</h1>" + fill.join(' '); //join
+
+datareplace += nombreReplace;
+
+/*data += "<h1> Mayores de edad </h1>";
 mayorDeEdad.forEach((personFor) => {
    data += personFor.mostrarDatos(); 
-});
+});*/
 
+data += datareplace;
 data += "<h1> Persona encontrada </h1>";
 data += dataFind;
+data += repit;
+data += dataFill;
 
 imprimir(data);
 
