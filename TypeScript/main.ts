@@ -136,12 +136,22 @@ let personas:string[] = ["Axel", "Almonte", "Jose"];
 let edades:number[] = [22, 11, 24];
 
 
+//map
 div_personas.innerHTML = "<ul>" + 
         personas.map((persona)=>{ //funcion flecha con el metodo map
             return `<li> ${persona} </li>`;
         }).join("");
 
-div_personas.innerHTML += "</ul>";
+//filter
+const personas_mayores = edades.filter((edad)=>{
+    return edad >= 18;
+});
+ //find
+ const personFind: string|undefined = personas.find((person) => person === "Axel") ; 
+
+ 
+
+//div_personas.innerHTML += "</ul>";
 
 //mostrar_datos(personas, edades, div_personas);
 
