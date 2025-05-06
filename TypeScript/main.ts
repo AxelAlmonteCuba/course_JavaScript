@@ -149,6 +149,23 @@ const personas_mayores = edades.filter((edad)=>{
  //find
  const personFind: string|undefined = personas.find((person) => person === "Axel") ; 
 
+ //replace
+const nombre_reemplazado = nombre.replace("Axel", "Jose");
+
+ //reduce
+const suma: number = edades.reduce((acumulado, edad_actual)=> acumulado + edad_actual, 0); //suma de edades
+ //repeat
+const numero = 3;
+const texto_repetido = "numero repetido".repeat(numero); 
+
+//fill
+const array_numbers: number[] = new Array(10).fill(2); //arreglo de 10 elementos llenos de 2
+array_numbers.fill(4, 2,5); //llenar de 4 desde la posicion 2 hasta la 5
+
+ //sort
+edades.sort((a , b) => a - b); //ordenar de menor a mayor
+edades.sort((a,b) => b-a) //ordenar de mayor a menor
+personas.sort(); //ordenar alfabeticamente
  
 
 //div_personas.innerHTML += "</ul>";

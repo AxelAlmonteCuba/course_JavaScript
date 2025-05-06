@@ -90,6 +90,20 @@ var personas_mayores = edades.filter(function (edad) {
 });
 //find
 var personFind = personas.find(function (person) { return person === "Axel"; });
+//replace
+var nombre_reemplazado = nombre.replace("Axel", "Jose");
+//reduce
+var suma = edades.reduce(function (acumulado, edad_actual) { return acumulado + edad_actual; }, 0); //suma de edades
+//repeat
+var numero = 3;
+var texto_repetido = "numero repetido".repeat(numero);
+//fill
+var array_numbers = new Array(10).fill(2); //arreglo de 10 elementos llenos de 2
+array_numbers.fill(4, 2, 5); //llenar de 4 desde la posicion 2 hasta la 5
+//sort
+edades.sort(function (a, b) { return a - b; }); //ordenar de menor a mayor
+edades.sort(function (a, b) { return b - a; }); //ordenar de mayor a menor
+personas.sort(); //ordenar alfabeticamente
 //div_personas.innerHTML += "</ul>";
 //mostrar_datos(personas, edades, div_personas);
 //funciones
